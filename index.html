@@ -1,88 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repuestos de Motos</title>
-    <script src="https://tailwindcss.com"></script>
+    <title>Señora Repuestos - Motos</title>
+    <style>
+        body { background-color: #111827; color: #f3f4f6; font-family: sans-serif; margin: 0; padding: 0; }
+        header { background-color: #000000; padding: 20px; text-align: center; border-bottom: 3px solid #f97316; }
+        h1 { color: #f97316; margin: 0; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle { color: #9ca3af; font-size: 13px; margin-top: 5px; }
+        .search-container { padding: 15px; max-width: 400px; margin: 0 auto; }
+        .search-input { w_idth: 100%; padding: 12px; border-radius: 6px; bg_color: #1f2937; color: white; border: 1px solid #374151; box-sizing: border-box; font-size: 14px; }
+        .categories { display: flex; gap: 8px; overflow-x: auto; padding: 10px 15px; white-space: nowrap; }
+        .cat-btn { background-color: #1f2937; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; border: none; color: white; }
+        .cat-btn.active { background-color: #f97316; color: black; }
+        .catalog { padding: 15px; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .card { background-color: #1f2937; border-radius: 8px; padding: 15px; border: 1px solid #374151; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .tag { color: #fb923c; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+        .prod-title { font-size: 18px; margin: 5px 0; color: white; font-weight: bold; }
+        .prod-desc { color: #9ca3af; font-size: 12px; margin: 5px 0 15px 0; line-height: 1.4; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; }
+        .price { color: #4ade80; font-size: 20px; font-weight: bold; }
+        .ws-btn { background-color: #22c55e; color: black; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; display: inline-flex; align-items: center; gap: 5px; }
+        footer { background-color: #000000; padding: 25px; text-align: center; margin-top: 30px; border-t: 1px solid #1f2937; }
+        footer p { margin: 5px 0; font-size: 12px; }
+    </style>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans">
+<body>
 
-    <!-- Encabezado -->
-    <header class="bg-black p-4 text-center border-b border-orange-500">
-        <h1 class="text-2xl font-bold text-orange-500">🏍️ MI LOCAL DE REPUESTOS</h1>
-        <p class="text-sm text-gray-400 mt-1">Todo para tu moto al mejor precio</p>
+    <header>
+        <h1>🏍️ MOTO REPUESTOS SUR</h1>
+        <div class="subtitle">Todo para tu moto al mejor precio</div>
     </header>
 
-    <!-- Buscador de ejemplo -->
-    <div class="p-4 max-w-md mx-auto">
-        <input type="text" placeholder="¿Qué repuesto buscas? (Ej: Balatas, Cadena...)" class="w-full p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-orange-500 text-sm">
+    <div class="search-container">
+        <input type="text" placeholder="¿Qué repuesto buscas?..." class="search-input">
     </div>
 
-    <!-- Categorías Rápidas -->
-    <div class="px-4 py-2 flex gap-2 overflow-x-auto text-xs whitespace-nowrap scrollbar-none">
-        <span class="bg-orange-500 text-black px-3 py-1.5 rounded-full font-bold">Todos</span>
-        <span class="bg-gray-800 px-3 py-1.5 rounded-full">Motor</span>
-        <span class="bg-gray-800 px-3 py-1.5 rounded-full">Frenos</span>
-        <span class="bg-gray-800 px-3 py-1.5 rounded-full">Transmisión</span>
-        <span class="bg-gray-800 px-3 py-1.5 rounded-full">Accesorios</span>
+    <div class="categories">
+        <button class="cat-btn active">Todos</button>
+        <button class="cat-btn">Motor</button>
+        <button class="cat-btn">Frenos</button>
+        <button class="cat-btn">Transmisión</button>
+        <button class="cat-btn">Accesorios</button>
     </div>
 
-    <!-- Catálogo de Productos -->
-    <main class="p-4 grid grid-cols-1 gap-4 max-w-md mx-auto">
+    <main class="catalog">
         
-        <!-- Producto 1 -->
-        <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 flex flex-col justify-between">
-            <div>
-                <span class="text-xs text-orange-400 font-semibold uppercase tracking-wider">Frenos</span>
-                <h3 class="text-lg font-bold mt-1 text-white">Pastillas de Freno Delanteras</h3>
-                <p class="text-xs text-gray-400 mt-1">Alta duración, compatible con Honda Wave y Yamaha Crypton.</p>
-            </div>
-            <div class="mt-4 flex items-center justify-between">
-                <span class="text-xl font-bold text-green-400">$12.500</span>
-                <a href="https://wa.me" target="_blank" class="bg-green-500 text-black px-4 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-green-400 transition-colors">
-                    📱 Consultar
+        <div class="card">
+            <span class="tag">Frenos</span>
+            <div class="prod-title">Pastillas de Freno Delanteras</div>
+            <div class="prod-desc">Alta duración, compatible con Honda Wave y Yamaha Crypton.</div>
+            <div class="card-footer">
+                <span class="price">$12.500</span>
+                <a href="https://wa.me" target="_blank" class="ws-btn">
+                    💬 Consultar
                 </a>
             </div>
         </div>
 
-        <!-- Producto 2 -->
-        <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 flex flex-col justify-between">
-            <div>
-                <span class="text-xs text-orange-400 font-semibold uppercase tracking-wider">Transmisión</span>
-                <h3 class="text-lg font-bold mt-1 text-white">Kit de Transmisión Completo</h3>
-                <p class="text-xs text-gray-400 mt-1">Cadena, corona y piñón reforzados para motos 150cc.</p>
-            </div>
-            <div class="mt-4 flex items-center justify-between">
-                <span class="text-xl font-bold text-green-400">$34.000</span>
-                <a href="https://wa.me" target="_blank" class="bg-green-500 text-black px-4 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-green-400 transition-colors">
-                    📱 Consultar
+        <div class="card">
+            <span class="tag">Transmisión</span>
+            <div class="prod-title">Kit de Transmisión Completo</div>
+            <div class="prod-desc">Cadena, corona y piñón reforzados para motos de trabajo 150cc.</div>
+            <div class="card-footer">
+                <span class="price">$34.000</span>
+                <a href="https://wa.me" target="_blank" class="ws-btn">
+                    💬 Consultar
                 </a>
             </div>
         </div>
 
-        <!-- Producto 3 -->
-        <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 flex flex-col justify-between">
-            <div>
-                <span class="text-xs text-orange-400 font-semibold uppercase tracking-wider">Motor</span>
-                <h3 class="text-lg font-bold mt-1 text-white">Aceite Semisintético 4T (1L)</h3>
-                <p class="text-xs text-gray-400 mt-1">Protección máxima para el motor en altas revoluciones.</p>
-            </div>
-            <div class="mt-4 flex items-center justify-between">
-                <span class="text-xl font-bold text-green-400">$9.800</span>
-                <a href="https://wa.me" target="_blank" class="bg-green-500 text-black px-4 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-green-400 transition-colors">
-                    📱 Consultar
+        <div class="card">
+            <span class="tag">Motor</span>
+            <div class="prod-title">Aceite Semisintético 4T (1L)</div>
+            <div class="prod-desc">Protección máxima para el motor en altas revoluciones urbanas.</div>
+            <div class="card-footer">
+                <span class="price">$9.800</span>
+                <a href="https://wa.me" target="_blank" class="ws-btn">
+                    💬 Consultar
                 </a>
             </div>
         </div>
 
     </main>
 
-    <!-- Pie de página / Contacto -->
-    <footer class="bg-black p-6 mt-8 text-center text-xs text-gray-500 border-t border-gray-800">
-        <p class="text-gray-300 font-semibold">📍 Encuéntranos en el local o pide por WhatsApp</p>
-        <p class="mt-1">Horarios: Lunes a Sábado de 9:00 a 19:00 hs</p>
-        <p class="mt-4 text-[10px] text-gray-600">&copy; 2026 Catálogo Digital de Repuestos</p>
+    <footer>
+        <p style="color: #f3f4f6; font-weight: bold;">📍 Encuéntranos en el local o pide por WhatsApp</p>
+        <p style="color: #9ca3af;">Horarios: Lunes a Sábado de 9:00 a 19:00 hs</p>
+        <p style="color: #4b5563; font-size: 10px; margin-top: 15px;">&copy; 2026 Catálogo Digital de Repuestos</p>
     </footer>
 
 </body>
